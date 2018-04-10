@@ -2,13 +2,8 @@ const mem = require("memoryjs");
 const sks = require("asynckeystate");
 const jsonfile = require("jsonfile");
 const request = require("request");
-const opener = require("opener");
 const sleep = require("sleep");
-
-var express = require("express"),
-    app = express(),
-    server = require("http").Server(app),
-    io = require("socket.io")(server);
+const fs = require("fs");
 
 var blueBird = {};
 var cheats = {};
@@ -18,7 +13,10 @@ var offsets = {
         dwClientDllBaseAddress: null
     },
     dwLocalPlayer: 0xAA6614,
+    dwEntityList: 0x4A8387C,
     dwForceJump: 0x4F1AAF4,
+    m_EntLoopDist: 0x10,
+    m_bSpotted: 0x939,
     m_fFlags: 0x100
 };
 
@@ -31,13 +29,14 @@ blueBird.getProcess = function() {
             return false;
         } else {
             try {
-                let module = mem.findModule("client.dll", process.th32ProcessID);
+                var module = mem.findModule("client.dll", process.th32ProcessID);
                 if (!foundCSGO) {
                     console.log("Found CS:GO!");
                     mem.findModule("client.dll", process.th32ProcessID, function(error, module) {
-                        let module = module;
+                        var module = module;
                         offsets.temp.dwClientDllBaseAddress = module.modBaseAddr;
                         foundCSGO = true;
+                        blueBird.createThreads();
                     });
                 }
             } catch (e) {
@@ -52,27 +51,26 @@ blueBird.getProcess = function() {
     });
 };
 
-cheats.bhop = function() {
-    let dwLocalPlayer = mem.readMemory(offsets.temp.dwClientDllBaseAddress + offsets.dwLocalPlayer, "int");
-    let iFlags = mem.readMemory(dwLocalPlayer + offsets.m_fFlags, "int");
-    if (sks.getAsyncKeyState(0x20)) {
-        mem.writeMemory(offsets.temp.dwClientDllBaseAddress + offsets.dwForceJump, ((iFlags==257) || (iFlags==263)) ? 5 : 4, "int");
-    }
-}
-
 blueBird.createThreads = function() {
-    setInterval(cheats.bhop, 1);
-}
+    fs.readdir('./features/', (error, files) => {
+        if(error) throw error;
 
-blueBird.destroyThreads = function() {
-    clearInterval(cheats.bhop)
+        var files = files.filter(f => f.split('.').pop() === 'js');
+        if(files.length <= 0)
+            return console.log('No features to load!');
+
+        console.log(`Loading ${files.length} features...`);
+        files.forEach((f, i) => {
+            var props = require(`./features/${f}`);
+            console.log(`${i + 1}: ` + `${f} loaded!`);
+            setInterval(function() {props.execute(offsets);}, props.settings.delay);
+        });
+    });
 }
 
 blueBird.update = function() {
     console.log("Waiting for CSGO...");
     processLoop = setInterval(blueBird.getProcess, 1000);
-
-    blueBird.createThreads();
 }
 
 blueBird.update();

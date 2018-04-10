@@ -9,7 +9,7 @@ Simple CS:GO external cheat made in NodeJS
 - [x] Radar
 - [ ] Aimbot
 - [ ] Triggerbot
-- [ ] No-Flash
+- [x] No-Flash
 - [ ] RCS
 - [x] Glow
 - [ ] Skinchanger

@@ -5,6 +5,8 @@ Simple CS:GO external cheat made in NodeJS
 - [x] Module loader
 - [ ] Web panel
 - [ ] Signature scanning
+- [x] Bhop
+- [x] Radar
 - [ ] Aimbot
 - [ ] Triggerbot
 - [ ] Glow

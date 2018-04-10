@@ -42,5 +42,5 @@ module.exports.execute = async function(offsets) {
 }
 
 module.exports.settings = {
-    delay: 5
+    delay: 20
 }

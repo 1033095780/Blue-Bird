@@ -1,5 +1,6 @@
 const mem = require("memoryjs");
 const sks = require("asynckeystate");
+const settings = require("../settings.json");
 
 var color = {r: 0, g: 0, b: 0, a: 0};
 
@@ -26,15 +27,15 @@ module.exports.execute = async function(offsets) {
             var iGlowIndex = mem.readMemory(dwEntity + offsets.m_iGlowIndex, "int");
             
             if (iEntityTeam == iLocalPlayerTeam) {
-                color.r = 0;
-                color.g = 255;
-                color.b = 0;
-                color.a = 150;
+                color.r = settings.glow.allay.r;
+                color.g = settings.glow.allay.g;
+                color.b = settings.glow.allay.b;
+                color.a = settings.glow.allay.a;
             } else {
-                color.r = 255;
-                color.g = 0;
-                color.b = 0;
-                color.a = 150;
+                color.r = settings.glow.enemy.r;
+                color.g = settings.glow.enemy.g;
+                color.b = settings.glow.enemy.b;
+                color.a = settings.glow.enemy.a;
             }
             setGlow(offsets, iGlowIndex, color.r, color.g, color.b, color.a, true, false, false)
         }
@@ -42,5 +43,6 @@ module.exports.execute = async function(offsets) {
 }
 
 module.exports.settings = {
-    delay: 20
+    delay: 20,
+    enabled: settings.glow.enabled
 }

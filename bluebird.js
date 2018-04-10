@@ -67,6 +67,8 @@ blueBird.createThreads = function() {
         files.forEach((f, i) => {
             var props = require(`./features/${f}`);
             console.log(`${i + 1}: ` + `${f} loaded!`);
+            props.settings.enabled ? console.log("   > Enabled") : console.log("   > Disabled");
+            if (!props.settings.enabled) return;
             setInterval(function() {props.execute(offsets);}, props.settings.delay);
         });
     });

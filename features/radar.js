@@ -1,5 +1,6 @@
 const mem = require("memoryjs");
 const sks = require("asynckeystate");
+const settings = require("../settings.json");
 
 module.exports.execute = async function(offsets) {
     for (var i = 1; i < 65; i++){
@@ -9,5 +10,6 @@ module.exports.execute = async function(offsets) {
 }
 
 module.exports.settings = {
-    delay: 250
+    delay: 250,
+    enabled: settings.radar.enabled
 }

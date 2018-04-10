@@ -1,5 +1,6 @@
 const mem = require("memoryjs");
 const sks = require("asynckeystate");
+const settings = require("../settings.json");
 
 module.exports.execute = async function(offsets) {
     var dwLocalPlayer = mem.readMemory(offsets.temp.dwClientDllBaseAddress + offsets.dwLocalPlayer, "int");
@@ -10,5 +11,6 @@ module.exports.execute = async function(offsets) {
 }
 
 module.exports.settings = {
-    delay: 250
+    delay: 250,
+    enabled: settings.noflash.enabled
 }

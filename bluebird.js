@@ -6,7 +6,6 @@ const sleep = require("sleep");
 const fs = require("fs");
 
 var blueBird = {};
-var cheats = {};
 
 var offsets = {
     temp: {
@@ -14,9 +13,13 @@ var offsets = {
     },
     dwLocalPlayer: 0xAA6614,
     dwEntityList: 0x4A8387C,
+    dwGlowObjectManager: 0x4FA08E8,
     dwForceJump: 0x4F1AAF4,
+    m_iGlowIndex: 0xA310,
     m_EntLoopDist: 0x10,
     m_bSpotted: 0x939,
+    m_iTeamNum: 0xF0,
+    m_bDormant: 0xE9,
     m_fFlags: 0x100
 };
 

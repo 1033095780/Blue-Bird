@@ -4,6 +4,7 @@ Simple CS:GO external cheat made in NodeJS
 ## TODO
 - [x] Module loader
 - [ ] Web panel
+- [ ] Settings
 - [ ] Signature scanning
 - [x] Bhop
 - [x] Radar

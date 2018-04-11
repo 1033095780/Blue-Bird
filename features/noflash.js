@@ -7,10 +7,10 @@ module.exports.execute = async function(offsets) {
     var flFlashMaxAlpha = mem.readMemory(dwLocalPlayer + offsets.m_flFlashMaxAlpha, "float");
  
     if (flFlashMaxAlpha > 0.0)
-        mem.writeMemory(dwLocalPlayer + offsets.m_flFlfashMaxAlpha, 0.0, "float");
+        mem.writeMemory(dwLocalPlayer + offsets.m_flFlfashMaxAlpha, settings.noflash.maxFlash, "float");
 }
 
 module.exports.settings = {
-    delay: 250,
+    delay: 700,
     enabled: settings.noflash.enabled
 }

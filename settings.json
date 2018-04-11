@@ -4,6 +4,7 @@
       },
       "glow": {
         "enabled": false,
+        "bloom": false,
         "allay": {
           "r": 0,
           "g": 255,
@@ -21,6 +22,14 @@
         "enabled": false
       },
       "noflash": {
+        "enabled": false,
+        "maxFlash": 0.0
+      },
+      "triggerbot": {
+        "enabled": true,
+        "delay": 200
+      },
+      "forceupdate": {
         "enabled": false
       }
   }

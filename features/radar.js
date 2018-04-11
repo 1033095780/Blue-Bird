@@ -10,6 +10,6 @@ module.exports.execute = async function(offsets) {
 }
 
 module.exports.settings = {
-    delay: 250,
+    delay: 400,
     enabled: settings.radar.enabled
 }

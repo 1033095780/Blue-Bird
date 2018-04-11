@@ -37,7 +37,7 @@ module.exports.execute = async function(offsets) {
                 color.b = settings.glow.enemy.b;
                 color.a = settings.glow.enemy.a;
             }
-            setGlow(offsets, iGlowIndex, color.r, color.g, color.b, color.a, true, false, false)
+            setGlow(offsets, iGlowIndex, color.r, color.g, color.b, color.a, true, false, settings.glow.bloom ? true : false)
         }
     }
 }

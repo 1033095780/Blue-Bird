@@ -11,6 +11,6 @@ module.exports.execute = async function(offsets) {
 }
 
 module.exports.settings = {
-    delay: 5,
+    delay: 10,
     enabled: settings.bhop.enabled
 }

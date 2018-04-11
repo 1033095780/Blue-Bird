@@ -9,18 +9,24 @@ var blueBird = {};
 
 var offsets = {
     temp: {
-        dwClientDllBaseAddress: null
+        dwClientDllBaseAddress: null,
+        dwEngineDllBaseAddress: null
     },
     dwLocalPlayer: 0xAA6614,
     dwEntityList: 0x4A8387C,
+    dwClientState: 0x57D894,
     dwForceJump: 0x4F1AAF4,
+    dwFullUpdate: 0x174,
+    dwForceAttack: 0x2EC5BD8,
     dwGlowObjectManager: 0x4FA08E8,
     m_flFlashMaxAlpha: 0xA2F4,
+    m_iCrosshairId: 0xB2A4,
     m_iGlowIndex: 0xA310,
     m_EntLoopDist: 0x10,
     m_bSpotted: 0x939,
     m_iTeamNum: 0xF0,
     m_bDormant: 0xE9,
+    m_iHealth: 0xFC,
     m_fFlags: 0x100
 };
 
@@ -36,9 +42,15 @@ blueBird.getProcess = function() {
                 var module = mem.findModule("client.dll", process.th32ProcessID);
                 if (!foundCSGO) {
                     console.log("Found CS:GO!");
+                    mem.findModule("engine.dll", process.th32ProcessID, function(error, module) {
+                        var module = module;
+                        offsets.temp.dwEngineDllBaseAddress = module.modBaseAddr;
+                        console.log(`Found engine.dll at: ${offsets.temp.dwEngineDllBaseAddress}`);
+                    });
                     mem.findModule("client.dll", process.th32ProcessID, function(error, module) {
                         var module = module;
                         offsets.temp.dwClientDllBaseAddress = module.modBaseAddr;
+                        console.log(`Found client.dll at: ${offsets.temp.dwClientDllBaseAddress}`);
                         foundCSGO = true;
                         blueBird.createThreads();
                     });

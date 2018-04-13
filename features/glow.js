@@ -19,7 +19,7 @@ module.exports.execute = async function(offsets) {
     var dwLocalPlayer = mem.readMemory(offsets.temp.dwClientDllBaseAddress + offsets.dwLocalPlayer, "int");
     var iLocalPlayerTeam = mem.readMemory(dwLocalPlayer + offsets.m_iTeamNum, "int");
     for (var i = 1; i < 65; i++){
-        var dwEntity =  mem.readMemory(offsets.temp.dwClientDllBaseAddress + offsets.dwEntityList + (i - 1) * offsets.m_EntLoopDist, "int");
+        var dwEntity = mem.readMemory(offsets.temp.dwClientDllBaseAddress + offsets.dwEntityList + (i - 1) * offsets.m_EntLoopDist, "int");
         var iEntityTeam = mem.readMemory(dwEntity + offsets.m_iTeamNum, "int");
         var bEntityDormant = mem.readMemory(dwEntity + offsets.m_bDormant, "int");
         

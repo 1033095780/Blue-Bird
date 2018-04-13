@@ -1,35 +1,50 @@
 {
-      "bhop": {
-        "enabled": false
-      },
-      "glow": {
-        "enabled": false,
-        "bloom": false,
-        "allay": {
-          "r": 0,
-          "g": 255,
-          "b": 0,
-          "a": 150
-        },
-        "enemy": {
-          "r": 255,
-          "g": 0,
-          "b": 0,
-          "a": 150
-        }
-      },
-      "radar": {
-        "enabled": false
-      },
-      "noflash": {
-        "enabled": false,
-        "maxFlash": 0.0
-      },
-      "triggerbot": {
-        "enabled": true,
-        "delay": 200
-      },
-      "forceupdate": {
-        "enabled": false
-      }
+  "bhop": {
+    "enabled": true
+  },
+  "glow": {
+    "enabled": true,
+    "bloom": false,
+    "allay": {
+      "r": 0,
+      "g": 255,
+      "b": 0,
+      "a": 255
+    },
+    "enemy": {
+      "r": 255,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    }
+  },
+  "chams": {
+    "enabled": true,
+    "allay": {
+      "r": 0,
+      "g": 255,
+      "b": 0,
+      "a": 255
+    },
+    "enemy": {
+      "r": 255,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    }
+  },
+  "radar": {
+    "enabled": true
+  },
+  "noflash": {
+    "enabled": true,
+    "maxFlash": 0.0
+  },
+  "triggerbot": {
+    "enabled": true,
+    "delay": 200
+  },
+  "forceupdate": {
+    "enabled": true
   }
+}

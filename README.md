@@ -1,4 +1,4 @@
-# Blue-Birb
+# Blue-Bird
 Simple CS:GO external cheat made in NodeJS
 
 ## TODO

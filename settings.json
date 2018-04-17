@@ -1,9 +1,9 @@
 {
   "bhop": {
-    "enabled": true
+    "enabled": false
   },
   "glow": {
-    "enabled": true,
+    "enabled": false,
     "bloom": false,
     "allay": {
       "r": 0,
@@ -19,7 +19,7 @@
     }
   },
   "chams": {
-    "enabled": true,
+    "enabled": false,
     "allay": {
       "r": 0,
       "g": 255,
@@ -34,17 +34,43 @@
     }
   },
   "radar": {
-    "enabled": true
+    "enabled": false
   },
   "noflash": {
-    "enabled": true,
+    "enabled": false,
     "maxFlash": 0.0
   },
   "triggerbot": {
-    "enabled": true,
-    "delay": 200
+    "enabled": false,
+    "delay": 1
   },
   "forceupdate": {
-    "enabled": true
+    "enabled": false
+  },
+  "skinchanger": {
+    "enabled": false,
+    "skins": {
+      "awp": {
+        "id": 9,
+        "paintkit": 344,
+        "seed": 1,
+        "wear": 0.01,
+        "stattrak": 1337
+      },
+      "m4a4": {
+        "id": 16,
+        "paintkit": 309,
+        "seed": 1,
+        "wear": 0.01,
+        "stattrak": 1337
+      },
+      "ak47": {
+        "id": 7,
+        "paintkit": 302,
+        "seed": 1,
+        "wear": 0.01,
+        "stattrak": 1337
+      }
+    }
   }
 }

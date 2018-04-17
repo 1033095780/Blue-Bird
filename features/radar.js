@@ -1,5 +1,4 @@
 const mem = require("memoryjs");
-const sks = require("asynckeystate");
 const settings = require("../settings.json");
 
 module.exports.execute = async function(offsets) {

@@ -8,13 +8,13 @@ Simple CS:GO external cheat made in NodeJS
 - [ ] Signature scanning
 - [x] Bhop
 - [x] Radar
-- [ ] Chams
+- [x] Chams
 - [ ] Aimbot
 - [x] Triggerbot
 - [x] No-Flash
 - [ ] RCS
 - [x] Glow
-- [ ] Skinchanger
+- [x] Skinchanger
 - [x] FullUpdate
 - [ ] Modelchanger
 
@@ -25,12 +25,14 @@ Simple CS:GO external cheat made in NodeJS
 - No-Flash
 - Glow
 - FullUpdate
+- SkinChanger
 
 ## Required packages
 ```
 memoryjs
 asynckeystate
 jsonfile
+colors
 request
 sleep
 fs

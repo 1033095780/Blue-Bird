@@ -3,8 +3,8 @@
     "enabled": false
   },
   "glow": {
-    "enabled": false,
-    "bloom": false,
+    "enabled": true,
+    "bloom": true,
     "allay": {
       "r": 0,
       "g": 255,
@@ -41,14 +41,14 @@
     "maxFlash": 0.0
   },
   "triggerbot": {
-    "enabled": false,
+    "enabled": true,
     "delay": 1
   },
   "forceupdate": {
-    "enabled": false
+    "enabled": true
   },
   "skinchanger": {
-    "enabled": false,
+    "enabled": true,
     "skins": {
       "awp": {
         "id": 9,
@@ -72,5 +72,8 @@
         "stattrak": 1337
       }
     }
+  },
+  "rcs": {
+    "enabled": true
   }
 }

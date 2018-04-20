@@ -1,7 +1,7 @@
 const mem = require("memoryjs");
 const settings = require("../settings.json");
 
-module.exports.execute = async function(offsets) {
+module.exports.execute = function(offsets) {
     var dwLocalPlayer = mem.readMemory(offsets.temp.dwClientDllBaseAddress + offsets.dwLocalPlayer, "int");
     var flFlashMaxAlpha = mem.readMemory(dwLocalPlayer + offsets.m_flFlashMaxAlpha, "float");
  

@@ -3,7 +3,7 @@ const sks = require("asynckeystate");
 const sleep = require("sleep");
 const settings = require("../settings.json");
 
-module.exports.execute = async function (offsets) {
+module.exports.execute = function (offsets) {
     if (sks.getAsyncKeyState(0x70)) {
         sleep.msleep(200);
         var dwClientState = mem.readMemory(offsets.temp.dwEngineDllBaseAddress + offsets.dwClientState, "int");

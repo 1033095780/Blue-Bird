@@ -1,0 +1,17 @@
+{
+  "lockfileVersion": 1,
+  "dependencies": {
+    "asynckeystate": "0.0.2",
+    "colors": "^1.2.1",
+    "express": "^4.16.3",
+    "gl-vec3": "^1.1.1",
+    "jsonfile": "^4.0.0",
+    "math-sqrt": "^1.0.1",
+    "memoryjs": "^2.1.0",
+    "node-vector": "0.0.1",
+    "opener": "^1.4.3",
+    "request": "^2.85.0",
+    "sleep": "^5.1.1",
+    "socket.io": "^2.1.0"
+  }
+}

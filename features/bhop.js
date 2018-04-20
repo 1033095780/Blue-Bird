@@ -2,7 +2,7 @@ const mem = require("memoryjs");
 const sks = require("asynckeystate");
 const settings = require("../settings.json");
 
-module.exports.execute = async function(offsets) {
+module.exports.execute = function(offsets) {
     var dwLocalPlayer = mem.readMemory(offsets.temp.dwClientDllBaseAddress + offsets.dwLocalPlayer, "int");
     var iFlags = mem.readMemory(dwLocalPlayer + offsets.m_fFlags, "int");
     if (sks.getAsyncKeyState(0x20)) {

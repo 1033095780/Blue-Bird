@@ -14,7 +14,7 @@ function setGlow(offsets, index, r, g, b, a, bRenderWhenOccluded, bRenderWhenUno
     mem.writeMemory(dwGlowObjectManager + (index * 0x38 + 0x26), bFullBloom, "bool");
 }
 
-module.exports.execute = async function(offsets) {
+module.exports.execute = function(offsets) {
     var dwLocalPlayer = mem.readMemory(offsets.temp.dwClientDllBaseAddress + offsets.dwLocalPlayer, "int");
     var iLocalPlayerTeam = mem.readMemory(dwLocalPlayer + offsets.m_iTeamNum, "int");
     for (var i = 1; i < 65; i++){

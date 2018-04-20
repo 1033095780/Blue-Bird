@@ -10,7 +10,7 @@ function setRender(offsets, entity, r, g, b, a) {
     mem.writeMemory(entity + offsets.m_clrRender + 0x3, a, "int");
 }
 
-module.exports.execute = async function(offsets) {
+module.exports.execute = function(offsets) {
     var dwLocalPlayer = mem.readMemory(offsets.temp.dwClientDllBaseAddress + offsets.dwLocalPlayer, "int");
     var iLocalPlayerTeam = mem.readMemory(dwLocalPlayer + offsets.m_iTeamNum, "int");
     for (var i = 1; i < 65; i++){

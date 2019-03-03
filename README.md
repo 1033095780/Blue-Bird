@@ -1,4 +1,4 @@
-# Blue-Bird
+# Blue-Bird ![](https://img.shields.io/badge/language-JavaScript-yellow.svg) ![](https://img.shields.io/badge/game-CS%3AGO-yellow.svg) ![](https://img.shields.io/badge/platform-Windows-0078d7.svg) ![](https://img.shields.io/badge/arch-x86-red.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
 Simple CS:GO external cheat made in NodeJS
 
 ## TODO
